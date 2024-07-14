@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid px-2 py-3">
+<h3 class="text-center">Ongoing tournaments</h3>
+<hr>
+{% for tour in tours %}
+<div class="card bg-primary text-center text-light">
+    <div class="card-header">
+      EVO GHOSTS
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{tour.tournament_name}}</h5>
+      <p class="card-text">{{tour.tournament_note}}</p>
+      <a href="{% url 'tourdetail' tour.pk %}" class="btn btn-warning text-dark">Participate</a>
+    </div>
+    <div class="card-footer">
+        <a href="" class="text-light">
+      Watch live matches on youtube
+    </a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock content %}
